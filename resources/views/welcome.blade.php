@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-       Draco|DrugCollection's
+    Draco|DrugCollection's
     </title>
 
     <meta name="keywords" content="">
