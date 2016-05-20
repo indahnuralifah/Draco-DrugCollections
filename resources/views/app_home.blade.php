@@ -126,8 +126,14 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li class="active"><a href="{{ url('/welcome') }}">Home</a>
                     </li>
+
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
+
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Keluhan <b class="caret"></b></a>
+
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
