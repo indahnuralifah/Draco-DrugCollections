@@ -129,7 +129,7 @@
                     </li>
 
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Keluhan <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Produk <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,64 +137,70 @@
                                         <div class="col-sm-3">
                                             <h5>Shop</h5>
                                             <ul>
-                                                <li><a href="" value="batuk">Batuk</button>
+                                                <li><a href="" value="batuk">Anti Jamur</button>
                                                 </li>
-                                                <li><a href="category.html">Category - sidebar left</a>
+                                                <li><a href="category.html">Anti Septik</a>
                                                 </li>
-                                                <li><a href="category-right.html">Category - sidebar right</a>
+                                                <li><a href="category-right.html">Asam Urat</a>
                                                 </li>
-                                                <li><a href="category-full.html">Category - full width</a>
+                                                <li><a href="category-full.html">Balsem</a>
                                                 </li>
-                                                <li><a href="detail.html">Product detail</a>
+                                                <li><a href="detail.html">Batuk Berdahak</a>
+                                                </li>
+                                                <li><a href="detail.html">Batuk Pilek</a>
+                                                </li>
+                                                <li><a href="detail.html">Demam</a>
+                                                </li>
+                                                <li><a href="detail.html">Diare</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>User</h5>
                                             <ul>
-                                                <li><a href="register.html">Register / login</a>
+                                                <li><a href="register.html">Gatal</a>
                                                 </li>
-                                                <li><a href="customer-orders.html">Orders history</a>
+                                                <li><a href="customer-orders.html">Gatal dan Alergi</a>
                                                 </li>
-                                                <li><a href="customer-order.html">Order history detail</a>
+                                                <li><a href="customer-order.html">Jerawat</a>
                                                 </li>
-                                                <li><a href="customer-wishlist.html">Wishlist</a>
+                                                <li><a href="customer-wishlist.html">Kalsium</a>
                                                 </li>
-                                                <li><a href="customer-account.html">Customer account / change password</a>
+                                                <li><a href="customer-account.html">Lambung</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>Order process</h5>
                                             <ul>
-                                                <li><a href="basket.html">Shopping cart</a>
+                                                <li><a href="basket.html">Mata</a>
                                                 </li>
-                                                <li><a href="checkout1.html">Checkout - step 1</a>
+                                                <li><a href="checkout1.html">Sesak</a>
                                                 </li>
-                                                <li><a href="checkout2.html">Checkout - step 2</a>
+                                                <li><a href="checkout2.html">Pencahar</a>
                                                 </li>
-                                                <li><a href="checkout3.html">Checkout - step 3</a>
+                                                <li><a href="checkout3.html">Pilek</a>
                                                 </li>
-                                                <li><a href="checkout4.html">Checkout - step 4</a>
+                                                <li><a href="checkout4.html">Sariawan</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>Pages and blog</h5>
                                             <ul>
-                                                <li><a href="blog.html">Blog listing</a>
+                                                <li><a href="blog.html">Susu</a>
                                                 </li>
-                                                <li><a href="post.html">Blog Post</a>
+                                                <li><a href="post.html">Vitamin</a>
                                                 </li>
-                                                <li><a href="faq.html">FAQ</a>
+                                                <li><a href="faq.html">Vitamin Anak</a>
                                                 </li>
-                                                <li><a href="text.html">Text page</a>
+                                                <li><a href="text.html">Panas</a>
                                                 </li>
-                                                <li><a href="text-right.html">Text page - right sidebar</a>
+                                                <li><a href="text-right.html">Suplemen</a>
                                                 </li>
-                                                <li><a href="404.html">404 page</a>
+                                                <li><a href="404.html">Mulut Dan Tenggorokan</a>
                                                 </li>
-                                                <li><a href="contact.html">Contact</a>
+                                                <li><a href="contact.html">Madu</a>
                                                 </li>
                                             </ul>
                                         </div>
