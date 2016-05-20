@@ -38,3 +38,6 @@ Route::post('blog/save', 'DracoController@store');
 Route::get('promosi/all', 'DracoController@view_Promosi');
 Route::get('promosi/add', 'DracoController@add_Promosi');
 Route::post('promosi/save', 'DracoController@get_Promosi');
+
+
+Route::post('/obat/view', ['as'=>'obat_view','uses'=>'DracoController@obat_view']);
