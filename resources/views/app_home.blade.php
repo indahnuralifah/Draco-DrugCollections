@@ -1,4 +1,3 @@
-<html lang="en">
 
 <head>
 
@@ -11,7 +10,7 @@
     <meta name="keywords" content="">
 
     <title>
-       Draco|DrugCollection's
+    Draco|DrugCollection's
     </title>
 
     <meta name="keywords" content="">
@@ -129,7 +128,16 @@
                     </li>
 
                     <li class="dropdown yamm-fw">
+
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Produk <b class="caret"></b></a>
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
+
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Keluhan <b class="caret"></b></a>
+
+
                         <ul class="dropdown-menu">
                             <li>
                                 <div class="yamm-content">
@@ -137,7 +145,11 @@
                                         <div class="col-sm-3">
                                             <h5>Shop</h5>
                                             <ul>
+
                                                 <li><a href="" value="batuk">Anti Jamur</button>
+
+                                                <li><a href="index.html">Homepage</a>
+
                                                 </li>
                                                 <li><a href="category.html">Anti Septik</a>
                                                 </li>
@@ -250,11 +262,12 @@
 
         </div>
         <!-- /.container -->
-        
     </div>
     <!-- /#navbar -->
 
     <!-- *** NAVBAR END *** -->
+                
+     
     @yield('content')      
 
 

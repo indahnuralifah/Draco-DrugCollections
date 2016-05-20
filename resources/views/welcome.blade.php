@@ -1,6 +1,7 @@
 @extends('app_home')      
 @section('content')
 
+
     <div id="all">
 
         <div id="content">
