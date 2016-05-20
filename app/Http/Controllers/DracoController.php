@@ -121,5 +121,10 @@ class DracoController extends Controller {
 	{
 		return view('promosi.add');
 	}
+	public function obat_view()
+	{
+		
+		return view('obat.view');
+	}
 
 }
