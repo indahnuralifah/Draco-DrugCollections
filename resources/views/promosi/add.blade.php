@@ -79,7 +79,7 @@
                             <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                         </a>
                     </div>
-                </div>
+                </div> 
             </div>
             <div class="top_nav">
                 <div class="nav_menu">
