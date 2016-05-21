@@ -128,9 +128,9 @@
                     </li>
 
 
-
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Keluhan <b class="caret"></b></a>
+
+       
 
 
                         <ul class="dropdown-menu">
@@ -141,73 +141,73 @@
                                             <h5>Shop</h5>
                                             <ul>
 
-                                                <li><a href="" value="batuk">Anti Jamur</button>
+                                                <li><a href="{{route('anti_jamur')}}" value="batuk">Anti Jamur</button>
 
                                                 <li><a href="index.html">Homepage</a>
 
                                                 </li>
-                                                <li><a href="category.html">Anti Septik</a>
+                                                <li><a href="{{route('anti_septik')}}">Anti Septik</a>
                                                 </li>
-                                                <li><a href="category-right.html">Asam Urat</a>
+                                                <li><a href="{{route('asam_urat')}}">Asam Urat</a>
                                                 </li>
-                                                <li><a href="category-full.html">Balsem</a>
+                                                <li><a href="{{route('balsem')}}">Balsem</a>
                                                 </li>
-                                                <li><a href="detail.html">Batuk Berdahak</a>
+                                                <li><a href="{{route('batuk_berdahak')}}">Batuk Berdahak</a>
                                                 </li>
-                                                <li><a href="detail.html">Batuk Pilek</a>
+                                                <li><a href="{{route('batuk_pilek')}}">Batuk Pilek</a>
                                                 </li>
-                                                <li><a href="detail.html">Demam</a>
+                                                <li><a href="{{route('demam')}}">Demam</a>
                                                 </li>
-                                                <li><a href="detail.html">Diare</a>
+                                                <li><a href="{{route('diare')}}">Diare</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>User</h5>
                                             <ul>
-                                                <li><a href="register.html">Gatal</a>
+                                                <li><a href="{{route('gatal')}}">Gatal</a>
                                                 </li>
-                                                <li><a href="customer-orders.html">Gatal dan Alergi</a>
+                                                <li><a href="{{route('gatal_alergi')}}">Gatal dan Alergi</a>
                                                 </li>
-                                                <li><a href="customer-order.html">Jerawat</a>
+                                                <li><a href="{{route('jerawat')}}">Jerawat</a>
                                                 </li>
-                                                <li><a href="customer-wishlist.html">Kalsium</a>
+                                                <li><a href="{{route('kalsium')}}">Kalsium</a>
                                                 </li>
-                                                <li><a href="customer-account.html">Lambung</a>
+                                                <li><a href="{{route('lambung')}}">Lambung</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>Order process</h5>
                                             <ul>
-                                                <li><a href="basket.html">Mata</a>
+                                                <li><a href="{{route('mata')}}">Mata</a>
                                                 </li>
-                                                <li><a href="checkout1.html">Sesak</a>
+                                                <li><a href="{{route('sesak')}}">Sesak</a>
                                                 </li>
-                                                <li><a href="checkout2.html">Pencahar</a>
+                                                <li><a href="{{route('pencahar')}}">Pencahar</a>
                                                 </li>
-                                                <li><a href="checkout3.html">Pilek</a>
+                                                <li><a href="{{route('pilek')}}">Pilek</a>
                                                 </li>
-                                                <li><a href="checkout4.html">Sariawan</a>
+                                                <li><a href="{{route('sariawan')}}">Sariawan</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-3">
                                             <h5>Pages and blog</h5>
                                             <ul>
-                                                <li><a href="blog.html">Susu</a>
+                                                <li><a href="{{route('susu')}}">Susu</a>
                                                 </li>
-                                                <li><a href="post.html">Vitamin</a>
+                                                <li><a href="{{route('vitamin')}}">Vitamin</a>
                                                 </li>
-                                                <li><a href="faq.html">Vitamin Anak</a>
+                                                <li><a href="{{route('vitamin_anak')}}">Vitamin Anak</a>
                                                 </li>
-                                                <li><a href="text.html">Panas</a>
+                                                <li><a href="{{route('panas')}}">Panas</a>
                                                 </li>
-                                                <li><a href="text-right.html">Suplemen</a>
+                                                <li><a href="{{route('suplemen')}}">Suplemen</a>
                                                 </li>
-                                                <li><a href="404.html">Mulut Dan Tenggorokan</a>
+                                                <li><a href="{{route('mulut_tenggorokan')}}">Mulut Dan Tenggorokan</a>
                                                 </li>
-                                                <li><a href="contact.html">Madu</a>
+                                                <li><a href="{{route('madu')}}">Madu</a>
                                                 </li>
                                             </ul>
                                         </div>
