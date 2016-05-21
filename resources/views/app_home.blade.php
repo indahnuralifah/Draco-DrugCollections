@@ -127,11 +127,6 @@
                     <li class="active"><a href="{{ url('/welcome') }}">Home</a>
                     </li>
 
-                    <li class="dropdown yamm-fw">
-
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Produk <b class="caret"></b></a>
-
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
 
 
                     <li class="dropdown yamm-fw">

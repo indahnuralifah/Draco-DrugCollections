@@ -20,11 +20,19 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('test','HomeController@view_test');
+// Route::get('/', [
+//    'as' => 'index', 'uses' => 'HomeController@index'
+//  ]);
+// Route::get('register', [
+//    'as' => 'register', 'uses' => 'SimpleauthController@register'
+//  ]);
+
+
+
 
 //ADMIN//
 Route::get('admin', function () {
-	return view('app');
+	return view('/admin/admin');
 });
 
 
@@ -39,5 +47,16 @@ Route::get('promosi/all', 'DracoController@view_Promosi');
 Route::get('promosi/add', 'DracoController@add_Promosi');
 Route::post('promosi/save', 'DracoController@get_Promosi');
 
+//MASTER PRODUK
+Route::get('masterproduk/all', 'MasterProdukController@index');
+Route::get('masterproduk/add', 'MasterProdukController@create');
+Route::post('masterproduk/save', 'MasterProdukController@store');
+
+//PRODUK
+
+//MASTER PRODUK
+Route::get('produk/all', 'ProdukController@index');
+Route::get('produk/add', 'ProdukController@create');
+Route::post('produk/save', 'ProdukController@store');
 
 Route::post('/obat/view', ['as'=>'obat_view','uses'=>'DracoController@obat_view']);
