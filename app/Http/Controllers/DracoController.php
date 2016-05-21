@@ -20,7 +20,8 @@ class DracoController extends Controller {
 	public function index()
 	{
 		$data = \App\Blog::all();
-		return view('blog.all')->with('data',$data);
+		$data2 = array('data2'=>\App\MasterProduk::get());
+		return view('blog.all')->with('data',$data)->with($data2);
 	}
 
 	/**

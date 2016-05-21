@@ -124,13 +124,15 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="{{ url('/welcome') }}">Home</a>
+                    <li class="active"><a href="{{ url('welcome') }}">Home</a>
                     </li>
 
 
-                    <li class="dropdown yamm-fw">
+            
 
-       
+
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Keluhan <b class="caret"></b></a>
 
 
                         <ul class="dropdown-menu">
@@ -138,79 +140,62 @@
                                 <div class="yamm-content">
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h5>Shop</h5>
+                                           
                                             <ul>
+                                            <table>
+                                            @foreach($data2 as $key => $produk)
+                                            @if($key < 5)
+                                            <tr>
+                                            <td>{{ $produk->nama_produk}}</td>
+                                            </tr>
+                                            
+                                            @endif
+                                            @endforeach
+                                            </table>
 
-                                                <li><a href="{{route('anti_jamur')}}" value="batuk">Anti Jamur</button>
+        
+                                                
+                                            </ul>
+                                        </div>
 
-                                                <li><a href="index.html">Homepage</a>
+                                        <div class="col-sm-3">
+                                        
+                                            <ul>
+                                            <table>
+                                            @foreach($data2 as $key => $produk)
+                                            @if($key > 5 && $key < 11)
+                                            <tr>
+                                            <td>{{ $produk->nama_produk}}</td>
+                                            </tr>
+                                            
+                                            @endif
+                                            @endforeach
+                                            </table>
 
-                                                </li>
-                                                <li><a href="{{route('anti_septik')}}">Anti Septik</a>
-                                                </li>
-                                                <li><a href="{{route('asam_urat')}}">Asam Urat</a>
-                                                </li>
-                                                <li><a href="{{route('balsem')}}">Balsem</a>
-                                                </li>
-                                                <li><a href="{{route('batuk_berdahak')}}">Batuk Berdahak</a>
-                                                </li>
-                                                <li><a href="{{route('batuk_pilek')}}">Batuk Pilek</a>
-                                                </li>
-                                                <li><a href="{{route('demam')}}">Demam</a>
-                                                </li>
-                                                <li><a href="{{route('diare')}}">Diare</a>
-                                                </li>
+        
+                                                
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
-                                            <h5>User</h5>
+
+                                          <div class="col-sm-3">
                                             <ul>
-                                                <li><a href="{{route('gatal')}}">Gatal</a>
-                                                </li>
-                                                <li><a href="{{route('gatal_alergi')}}">Gatal dan Alergi</a>
-                                                </li>
-                                                <li><a href="{{route('jerawat')}}">Jerawat</a>
-                                                </li>
-                                                <li><a href="{{route('kalsium')}}">Kalsium</a>
-                                                </li>
-                                                <li><a href="{{route('lambung')}}">Lambung</a>
-                                                </li>
+                                            <table>
+                                            @foreach($data2 as $key => $produk)
+                                            @if($key > 10 && $key < 16)
+                                            <tr>
+                                            <td>{{ $produk->nama_produk}}</td>
+                                            </tr>
+                                            
+                                            @endif
+                                            @endforeach
+                                            </table>
+
+        
+                                                
                                             </ul>
                                         </div>
-                                        <div class="col-sm-3">
-                                            <h5>Order process</h5>
-                                            <ul>
-                                                <li><a href="{{route('mata')}}">Mata</a>
-                                                </li>
-                                                <li><a href="{{route('sesak')}}">Sesak</a>
-                                                </li>
-                                                <li><a href="{{route('pencahar')}}">Pencahar</a>
-                                                </li>
-                                                <li><a href="{{route('pilek')}}">Pilek</a>
-                                                </li>
-                                                <li><a href="{{route('sariawan')}}">Sariawan</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-sm-3">
-                                            <h5>Pages and blog</h5>
-                                            <ul>
-                                                <li><a href="{{route('susu')}}">Susu</a>
-                                                </li>
-                                                <li><a href="{{route('vitamin')}}">Vitamin</a>
-                                                </li>
-                                                <li><a href="{{route('vitamin_anak')}}">Vitamin Anak</a>
-                                                </li>
-                                                <li><a href="{{route('panas')}}">Panas</a>
-                                                </li>
-                                                <li><a href="{{route('suplemen')}}">Suplemen</a>
-                                                </li>
-                                                <li><a href="{{route('mulut_tenggorokan')}}">Mulut Dan Tenggorokan</a>
-                                                </li>
-                                                <li><a href="{{route('madu')}}">Madu</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+
+                                       
                                     </div>
                                 </div>
                                 <!-- /.yamm-content -->

@@ -18,9 +18,10 @@ class MasterProdukController extends Controller {
 	 */
 	public function index()
 	{
-		
-		$data = \App\MasterProduk::all();
-		return view('masterproduk.all')->with('data',$data);
+		$data2 = array('data2'=>\App\MasterProduk::where('nama_produk')->get());
+		return view('masterproduk.all')->with($data2);
+
+
 	}
 
 	/**
@@ -55,7 +56,7 @@ class MasterProdukController extends Controller {
 	public function show($id)
 	{
 		//   
-
+	}
 	/**
 	 * Show the form for editing the specified resource.
 	 *

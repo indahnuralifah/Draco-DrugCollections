@@ -18,7 +18,7 @@
     <script src="{{url('assets/js/jquery.min.js')}}"></script>
     <script src="((url('assets/js/nprogress.js')}}"></script>
     <script>
-        NProgress.start();
+        NProgress.start();  
     </script>
 </head>
 <body class="nav-md">
@@ -121,12 +121,27 @@
              </div>
             </div>   
 
+
+            <div class="x_content">
+            <br>
+            <div class="item form-group">
+            <label for="password" class="control-label col-md-3">Harga</label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="password" type="text" name="harga" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+             </div>
+            </div>    
+
             <div class="clearfix"></div>
             <br>
             <div class="item form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Harga</label>
+             <label for="password" class="control-label col-md-3">Nama Produk</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-            <textarea id="textarea" required="required" name="harga" class="form-control col-md-7 col-xs-12"></textarea>
+           <select class="form-control" name="nama_produk">
+           @foreach ($data1 as $keluhan)
+               <option>{{ $keluhan->nama_produk }}</option>
+          
+           @endforeach
+            </select>
             </div>
             </div>
 

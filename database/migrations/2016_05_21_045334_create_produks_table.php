@@ -17,6 +17,7 @@ class CreateProduksTable extends Migration {
 			$table->increments('id');
 			$table->String('nama_obat');
 			$table->String('harga');
+			$table->string('nama_produk');
 			$table->String('Gambar');
 			$table->timestamps();
 		});

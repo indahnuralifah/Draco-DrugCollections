@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Produk;
-use App;
+use App\MasterProduk;
 use Illuminate\Support\Facades\Input;
 
 use Illuminate\Http\Request;
@@ -19,6 +19,8 @@ class ProdukController extends Controller {
 	public function index()
 	{
 		$data = \App\Produk::all();
+
+		
 		return view('produk.all')->with('data',$data);
 	}
 
@@ -28,8 +30,10 @@ class ProdukController extends Controller {
 	 * @return Response
 	 */
 	public function create()
+
 	{
-		return view('produk.add');
+		$data1 = array('data1'=>MasterProduk::all());
+		return view('produk.add')->with($data1); 
 	}
 
 	/**
@@ -43,6 +47,7 @@ class ProdukController extends Controller {
 		$post = new Produk;
 		$post->nama_obat = Input::get('nama_obat');
 		$post->harga = Input::get('harga');
+		$post->nama_produk = Input::get('nama_produk');
 		if(Input::hasFile('gambar')){
 			$gambar = date("YmdHis");
 			uniqid().".".Input::file('gambar')->getClientOriginalExtension();

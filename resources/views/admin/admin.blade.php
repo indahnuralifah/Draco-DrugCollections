@@ -162,6 +162,8 @@
         <div id="notif-group" class="tabbed_notifications"></div>
     </div>
 
+    @yield('content')
+
     <script src="js/bootstrap.min.js"></script>
 
     <!-- gauge js -->
