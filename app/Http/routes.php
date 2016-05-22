@@ -40,7 +40,7 @@ Route::get('admin', function () {
 Route::get('blog/all', 'DracoController@index');
 Route::get('blog/add', 'DracoController@create');
 Route::post('blog/save', 'DracoController@store');
-Route::get('blog/show', 'DracoController@show');
+Route::get('blog/show', 'DracoController@index');
 Route::get('blog/edit/{id}', 'DracoController@edit');
 Route::get('blog/delete/{id}', 'DracoController@destroy');
 

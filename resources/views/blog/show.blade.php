@@ -120,14 +120,18 @@
                          <th>Isi</th>
                          <th>Gambar</th>
                         </tr>
+
+                           </thead> 
+                           <tbody>   
+                          @foreach($data as $key => $blog)
+
+                      
                          
-                          @foreach($data2 as $key => $blog)
-                           
                         <tr>
-                            <td><a href="{{$blog->id }}">{{ $blog->id}}</a></td>
-                            <td><a href="{{$blog->judul }}">{{ $blog->judul}}</a></td>
-                            <td><a href="{{$blog->isi }}">{{ $blog->nama_isi}}</a></td>
-                            <td><a href="{{$blog->gambar }}">{{ $blog->gambar}}</a></td>  
+                            <td>{{ $blog->id}}</td>
+                            <td>{{ $blog->judul}}</td>
+                            <td>{{ $blog->isi}}</td>
+                            <td>{{ $blog->gambar}}</td>  
 
                          </tr> 
                           @endforeach                     

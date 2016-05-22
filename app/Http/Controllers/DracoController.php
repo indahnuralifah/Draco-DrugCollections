@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Blog;
 use App\Promosi;
 use App;
+use App\MasterProduk;
 use Illuminate\Support\Facades\Input;
 
 class DracoController extends Controller {
@@ -19,9 +20,9 @@ class DracoController extends Controller {
 	
 	public function index()
 	{
-		$data = \App\Blog::all();
+		$data = array('data'=>\App\Blog::get());
 		$data2 = array('data2'=>\App\MasterProduk::get());
-		return view('blog.all')->with('data',$data)->with($data2);
+		return view('blog.show')->with($data)->with($data2);
 	}
 
 	/**
