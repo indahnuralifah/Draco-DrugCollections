@@ -24,6 +24,20 @@ class ProdukController extends Controller {
 		return view('produk.all')->with('data',$data);
 	}
 
+	public function produk()
+	{
+		$data = \App\Produk::where('nama_produk','=', 'nama_obat');
+		return view('produk')->with('data',$data);
+	}
+	public function anti_jamur()
+	{
+		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
+		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Anti Jamur')->orderBy('id','desc')->get());
+		// $data1 = \App\Produk::all();
+		$data1 = array('data1'=>MasterProduk::all());
+		return view('produk')->with($data2)->with($data1);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -48,6 +62,7 @@ class ProdukController extends Controller {
 		$post->nama_obat = Input::get('nama_obat');
 		$post->harga = Input::get('harga');
 		$post->nama_produk = Input::get('nama_produk');
+		
 		if(Input::hasFile('gambar')){
 			$gambar = date("YmdHis");
 			uniqid().".".Input::file('gambar')->getClientOriginalExtension();

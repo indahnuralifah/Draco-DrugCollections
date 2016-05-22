@@ -40,6 +40,9 @@ Route::get('admin', function () {
 Route::get('blog/all', 'DracoController@index');
 Route::get('blog/add', 'DracoController@create');
 Route::post('blog/save', 'DracoController@store');
+Route::get('blog/show', 'DracoController@show');
+Route::get('blog/edit/{id}', 'DracoController@edit');
+Route::get('blog/delete/{id}', 'DracoController@destroy');
 
 
 //PROMOSI//
@@ -55,9 +58,19 @@ Route::post('masterproduk/save', 'MasterProdukController@store');
 //PRODUK
 Route::get('produk/all', 'ProdukController@index');
 Route::get('produk/add', 'ProdukController@create');
+Route::get('produk', 'ProdukController@produk');
+Route::get('Anti Jamur', 'ProdukController@anti_jamur');
 Route::post('produk/save', 'ProdukController@store');
 
-Route::get('/images/{filename}',
+//STOK OBAT
+Route::get('stok/all', 'DracoController@view_Stok');
+Route::get('stok/add', 'DracoController@add_Stok');
+Route::post('strok/save', 'DracoController@get_Stok');
+
+
+
+
+Route::get('/gambar/{filename}',
 	function ($filename)
 {
 	$path = storage_path().

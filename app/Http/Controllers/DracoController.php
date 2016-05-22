@@ -31,8 +31,10 @@ class DracoController extends Controller {
 	 */
 	public function create()
 	{
-		return view('blog.add');
+		$data2 = array('data2'=>MasterProduk::all());
+		return view('blog.add')->with($data2);
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
@@ -51,7 +53,7 @@ class DracoController extends Controller {
 			$post->gambar = $gambar;
 		}
 		$post->save();
-		return redirect(url('blog/add'));
+		return redirect(url('blog/show'));
 	}
 
 	/**
@@ -60,10 +62,14 @@ class DracoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+		
+
+        return view('blog.show', compact('blog'));
 	}
+		
+
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -127,5 +133,38 @@ class DracoController extends Controller {
 		
 		return view('obat.view');
 	}
+
+
+
+	public function get_Stok()
+	{
+
+		$post = new Stok;
+		$post->kode = Input::get('kode');
+		$post->nama_obat = Input::get('nama_obat');
+		$post->jenis_obat = Input::get('jenis_obat');
+		$post->satuan = Input::get('satuan');
+		$post->kegunaan = Input::get('kegunaan');
+		$post->harga_beli = Input::get('harga_jual');
+		$post->jumlah_stok = Input::get('jumlah_stok');
+		$post->tanggal_masuk = Input::get('tanggal_masuk');
+		$post->save();
+		return redirect(url('stok/add'));
+
+			}
+	public function view_Stok()
+	{
+
+		$data = array('data'=>Promosi::all());
+		return view('stok.add')->with($data);
+	}
+	public function add_Stok()
+	{
+		return view('stok.add');
+	}
+
+
+
+
 
 }

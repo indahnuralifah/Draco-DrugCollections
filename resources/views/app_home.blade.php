@@ -146,7 +146,8 @@
                                             @foreach($data2 as $key => $produk)
                                             @if($key < 5)
                                             <tr>
-                                            <td>{{ $produk->nama_produk}}</td>
+
+                                            <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</a></td>
                                             </tr>
                                             
                                             @endif
