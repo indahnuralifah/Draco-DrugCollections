@@ -17,7 +17,7 @@ class MasterProdukController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
+	{	
 		$data2 = array('data2'=>\App\MasterProduk::where('nama_produk')->get());
 		return view('masterproduk.all')->with($data2);
 

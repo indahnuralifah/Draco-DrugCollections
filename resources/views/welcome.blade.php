@@ -10,16 +10,16 @@
                 <div class="col-md-12">
                     <div id="main-slider">
                         <div class="item">
-                            <img src="img/main-slider1.jpg" alt="" class="img-responsive">
+                            <img src="img/q1.jpg" alt="" class="img-responsive">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/main-slider2.jpg" alt="">
+                            <img class="img-responsive" src="img/q2.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/main-slider3.jpg" alt="">
+                            <img class="img-responsive" src="img/q6.jpg" alt="">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/main-slider4.jpg" alt="">
+                            <img class="img-responsive" src="img/q4.jpg" alt="">
                         </div>
                     </div>
                     <!-- /#main-slider -->
@@ -28,16 +28,18 @@
 
             <!-- *** ADVANTAGES HOMEPAGE ***
  _________________________________________________________ -->
-
-<div id="hot">
+  <div id="hot">
 
                 <div class="box">
                     <div class="container">
                         <div class="col-md-12">
-                            <h2>Hot this week</h2>
+                            <h2>Terbaru</h2>
                         </div>
                     </div>
                 </div>
+
+
+
 
                 <div class="container">
                     <div class="product-slider">
@@ -58,7 +60,7 @@
                                     </div>
                                 </div>
                                 <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                                    <img src="img/product1.jpg" alt="" claass="img-responsive">
                                 </a>
                                 <div class="text">
                                     <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
@@ -321,104 +323,8 @@
                 <!-- /.container -->
 
             </div>
-            <!-- /#hot -->
+          
 
-            <!-- *** HOT END *** -->
-
-            <!-- *** GET INSPIRED ***
-
-
- 
-
-            <div class="container" data-animate="fadeInUpBig">
-                <div class="col-md-12">
-                    <div class="box slideshow">
-                        <h3>Get Inspired</h3>
-                        <p class="lead">Get the inspiration from our world class designers</p>
-                        <div id="get-inspired" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/getinspired1.jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/getinspired2.jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/getinspired3.jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- *** GET INSPIRED END *** -->
-
-            <!-- *** BLOG HOMEPAGE ***
- _________________________________________________________ -->
-
-
-
-            <div class="box text-center" data-animate="fadeInUp">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h3 class="text-uppercase">From our blog</h3>
-
-                        <p class="lead">What's new in the world of fashion? <a href="blog.html">Check our blog!</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-
-                <div class="col-md-12" data-animate="fadeInUp">
-
-                    <div id="blog-homepage" class="row">
-                        <div class="col-sm-6">
-                            <div class="post">
-                                <h4><a href="post.html">Fashion now</a></h4>
-                                <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a>
-                                </p>
-                                <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="post">
-                                <h4><a href="post.html">Who is who - example blog post</a></h4>
-                                <p class="author-category">By <a href="#">John Slim</a> in <a href="">About Minimal</a>
-                                </p>
-                                <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a>
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- /#blog-homepage -->
-                </div>
-            </div>
-            <!-- /.container -->
-
-            <!-- *** BLOG HOMEPAGE END *** -->
-
-
-        </div>
-        <!-- /#content -->
-
-        <!-- *** FOOTER ***
- _________________________________________________________ -->
         <div id="footer" data-animate="fadeInUp">
             <div class="container">
                 <div class="row">
@@ -481,7 +387,6 @@
                     <!-- /.col-md-3 -->
 
 
-
                     <div class="col-md-3 col-sm-6">
 
                         <h4>Get the news</h4>
@@ -537,14 +442,10 @@
         <div id="copyright">
             <div class="container">
                 <div class="col-md-6">
-                    <p class="pull-left">© 2015 Your name goes here.</p>
+                    <p class="pull-left">© 2016 Fah</p>
 
                 </div>
-                <div class="col-md-6">
-                    <p class="pull-right">Template by <a href="http://bootstrapious.com/e-commerce-templates">Bootstrapious</a> with support from <a href="https://kakusei.cz">Kakusei</a> 
-                        <!-- Not removing these links is part of the licence conditions of the template. Thanks for understanding :) -->
-                    </p>
-                </div>
+               
             </div>
         </div>
         <!-- *** COPYRIGHT END *** -->

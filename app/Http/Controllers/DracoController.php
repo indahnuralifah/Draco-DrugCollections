@@ -8,6 +8,9 @@ use App\Blog;
 use App\Promosi;
 use App;
 use App\MasterProduk;
+use App\Produk;
+use App\Stok;
+
 use Illuminate\Support\Facades\Input;
 
 class DracoController extends Controller {
@@ -17,12 +20,12 @@ class DracoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	
+		
 	public function index()
 	{
 		$data = array('data'=>\App\Blog::get());
 		$data2 = array('data2'=>\App\MasterProduk::get());
-		return view('blog.show')->with($data)->with($data2);
+		return view('blog.all')->with($data)->with($data2);
 	}
 
 	/**
@@ -54,7 +57,7 @@ class DracoController extends Controller {
 			$post->gambar = $gambar;
 		}
 		$post->save();
-		return redirect(url('blog/show'));
+		return redirect(url('blog/add'));
 	}
 
 	/**
@@ -67,7 +70,7 @@ class DracoController extends Controller {
 	{
 		
 
-        return view('blog.show', compact('blog'));
+        return view('blog.add', compact('blog'));
 	}
 		
 
@@ -145,10 +148,12 @@ class DracoController extends Controller {
 		$post->nama_obat = Input::get('nama_obat');
 		$post->jenis_obat = Input::get('jenis_obat');
 		$post->satuan = Input::get('satuan');
-		$post->kegunaan = Input::get('kegunaan');
+		$post->nama_produk = Input::get('nama_produk');
+		$post->ket = Input::get('ket');
+		$post->harga_jual = Input::get('harga_jual');
 		$post->harga_beli = Input::get('harga_jual');
 		$post->jumlah_stok = Input::get('jumlah_stok');
-		$post->tanggal_masuk = Input::get('tanggal_masuk');
+		
 		$post->save();
 		return redirect(url('stok/add'));
 
@@ -161,7 +166,8 @@ class DracoController extends Controller {
 	}
 	public function add_Stok()
 	{
-		return view('stok.add');
+		$data1 = array('data1'=>MasterProduk::all());
+		return view('stok.add')->with($data1);
 	}
 
 

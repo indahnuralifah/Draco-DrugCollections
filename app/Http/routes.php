@@ -32,7 +32,7 @@ Route::controllers([
 
 //ADMIN//
 Route::get('admin', function () {
-	return view('/admin/admin');
+	return view('admin');
 });
 
 
@@ -60,12 +60,29 @@ Route::get('produk/all', 'ProdukController@index');
 Route::get('produk/add', 'ProdukController@create');
 Route::get('produk', 'ProdukController@produk');
 Route::get('Anti Jamur', 'ProdukController@anti_jamur');
+Route::get('Anti Septik', 'ProdukController@anti_septik');
+Route::get('Asam Urat', 'ProdukController@asam_urat');
+Route::get('Balsem', 'ProdukController@balsem');
+Route::get('Batuk Berdahak', 'ProdukController@batuk_berdahak');
+Route::get('Batuk Pilek', 'ProdukController@batuk_pilek');
+Route::get('Demam', 'ProdukController@demam');
+Route::get('Diare', 'ProdukController@diare');
+Route::get('Gatal', 'ProdukController@gatal');
+Route::get('Gatal dan Alergi', 'ProdukController@gatal_alergi');
+Route::get('Panas', 'ProdukController@panas');
+Route::get('Jerawat', 'ProdukController@jerawat');
+Route::get('Kalsium', 'ProdukController@kalsium');
+Route::get('Lambung', 'ProdukController@lambung');
+Route::get('Mata', 'ProdukController@mata');
+Route::get('Pencahar', 'ProdukController@pencahar');
+Route::get('Pilek', 'ProdukController@pilek');
+Route::get('Sariawan', 'ProdukController@sariawan');
 Route::post('produk/save', 'ProdukController@store');
 
 //STOK OBAT
 Route::get('stok/all', 'DracoController@view_Stok');
 Route::get('stok/add', 'DracoController@add_Stok');
-Route::post('strok/save', 'DracoController@get_Stok');
+Route::post('stok/save', 'DracoController@get_Stok');
 
 
 

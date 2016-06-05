@@ -1,4 +1,3 @@
-
 <head>
 
     <meta charset="utf-8">
@@ -30,7 +29,7 @@
     <!-- your stylesheet with modifications -->
     <link href="{{ url('css/custom.css')}}" rel="stylesheet">
 
-    <script src="js/respond.min.js"></script>
+    <script src="{{ url('js/respond.min.js')}}"></script>
 
     <link rel="shortcut icon" href="favicon.png">
 
@@ -115,16 +114,22 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"> Items in cart</span>
                     </a>
                 </div>
             </div>
             <!--/.navbar-header -->
 
             <div class="navbar-collapse collapse" id="navigation">
+ 
+                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
+                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                </a>
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="{{ url('welcome') }}">Home</a>
+
+                    <li class="active"><a href="{{ url('/') }}">Home</a>
                     </li>
 
 
@@ -143,7 +148,7 @@
                                            
                                             <ul>
                                             <table>
-                                            @foreach($data2 as $key => $produk)
+                                            @foreach($draco as $key => $produk)
                                             @if($key < 5)
                                             <tr>
 
@@ -163,10 +168,10 @@
                                         
                                             <ul>
                                             <table>
-                                            @foreach($data2 as $key => $produk)
+                                            @foreach($draco as $key => $produk)
                                             @if($key > 5 && $key < 11)
                                             <tr>
-                                            <td>{{ $produk->nama_produk}}</td>
+                                            <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</td>
                                             </tr>
                                             
                                             @endif
@@ -175,16 +180,16 @@
 
         
                                                 
-                                            </ul>
+                                            </ul>   
                                         </div>
 
                                           <div class="col-sm-3">
                                             <ul>
                                             <table>
-                                            @foreach($data2 as $key => $produk)
+                                            @foreach($draco as $key => $produk)
                                             @if($key > 10 && $key < 16)
                                             <tr>
-                                            <td>{{ $produk->nama_produk}}</td>
+                                            <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</td>
                                             </tr>
                                             
                                             @endif
@@ -260,4 +265,4 @@
     <script src="{{url('js/modernizr.js')}}"></script>
     <script src="{{url('js/bootstrap-hover-dropdown.js')}}"></script>
     <script src="{{url('js/owl.carousel.min.js')}}"></script>
-    <script src="{{url('js/front.js')}}"></script>
+    <script src="{{url('js/front.js')}}"></script>  

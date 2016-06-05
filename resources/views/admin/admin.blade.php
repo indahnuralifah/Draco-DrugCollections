@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -162,7 +162,7 @@
         <div id="notif-group" class="tabbed_notifications"></div>
     </div>
 
-    @yield('content')
+        @yield('content')   
 
     <script src="js/bootstrap.min.js"></script>
 
