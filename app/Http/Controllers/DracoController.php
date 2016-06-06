@@ -28,6 +28,13 @@ class DracoController extends Controller {
 		return view('blog.all')->with($data)->with($data2);
 	}
 
+	// public function show()
+	// {
+	// 	$data = array('data'=>\App\Blog::get());
+	// 	$data2 = array('data2'=>\App\MasterProduk::get());
+	// 	return view('blog.show')->with($data)->with($data2);
+	// }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -69,7 +76,9 @@ class DracoController extends Controller {
 	public function show()
 	{
 		
-
+		$data = array('data'=>\App\Blog::get());
+		$data2 = array('data2'=>\App\MasterProduk::get());
+		return view('blog.show')->with($data)->with($data2);
         return view('blog.add', compact('blog'));
 	}
 		
@@ -168,6 +177,14 @@ class DracoController extends Controller {
 	{
 		$data1 = array('data1'=>MasterProduk::all());
 		return view('stok.add')->with($data1);
+	}
+	public function view_Obat()
+	{
+		
+		$data = array('data'=>\App\Blog::get());
+		$data2 = array('data2'=>\App\MasterProduk::get());
+		return view('stok.show')->with($data)->with($data2);
+      
 	}
 
 

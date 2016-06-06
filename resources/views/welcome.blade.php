@@ -9,17 +9,15 @@
             <div class="container">
                 <div class="col-md-12">
                     <div id="main-slider">
+                        
                         <div class="item">
-                            <img src="img/q1.jpg" alt="" class="img-responsive">
+                            <img class="img-responsive" src="img/1.png" alt="">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/q2.jpg" alt="">
+                            <img class="img-responsive" src="img/2.png" alt="">
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src="img/q6.jpg" alt="">
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src="img/q4.jpg" alt="">
+                            <img class="img-responsive" src="img/3.png" alt="">
                         </div>
                     </div>
                     <!-- /#main-slider -->
@@ -43,33 +41,7 @@
 
                 <div class="container">
                     <div class="product-slider">
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="detail.html">
-                                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                        <div class="back">
-                                            <a href="detail.html">
-                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" claass="img-responsive">
-                                </a>
-                                <div class="text">
-                                    <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
-                                    <p class="price">$143.00</p>
-                                </div>
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
+            
 
                         <div class="item">
                             <div class="product">
