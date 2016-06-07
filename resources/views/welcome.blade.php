@@ -35,32 +35,27 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
                 <div class="container">
                     <div class="product-slider">
-            
-
+                       @foreach($data as $key)
                         <div class="item">
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
                                             <a href="detail.html">
-                                                <img src="img/product2.jpg" alt="" class="img-responsive">
+                                                <img src="/gambar/{{$key->gambar}}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
                                             <a href="detail.html">
-                                                <img src="img/product2_2.jpg" alt="" class="img-responsive">
+                                                <img src="/gambar/{{$key->gambar}}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="detail.html" class="invisible">
-                                    <img src="img/product2.jpg" alt="" class="img-responsive">
+                                    <img src="/gambar/{{$key->gambar}}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
                                     <h3><a href="detail.html">White Blouse Armani</a></h3>
@@ -88,7 +83,7 @@
                             </div>
                             <!-- /.product -->
                         </div>
-
+@endforeach
                         <div class="item">
                             <div class="product">
                                 <div class="flip-container">

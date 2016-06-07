@@ -1261,8 +1261,8 @@ h1 {
   color: #777777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #80cbc4;
-   font-size: 17px;
+  color: #555;
+   font-size: 25px;
  
 }
 .navbar-default .navbar-nav > li > a:hover,
@@ -1273,11 +1273,11 @@ h1 {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #fb8c00;
+  color: #555;
   background-color: #ffffff;
   text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 100;
+    font-size: 25px;
+    font-weight: 200;
     text-align: center;
 }
 .navbar-default .navbar-nav > .disabled > a,
@@ -1339,11 +1339,15 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #F5F5F5;
 }
 a {
-  color: #4fbfa8;
+  color: #555;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 300;
+  position: static;
+  font-size: 15px;
 }
 a:hover,
 a:focus {
@@ -1395,8 +1399,8 @@ hr {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #fb8c00;
-  border-color: #fb8c00;
+  background-color: #555;
+  border-color: #555;
   margin-right: 40px;
 }
 .btn-primary:hover,

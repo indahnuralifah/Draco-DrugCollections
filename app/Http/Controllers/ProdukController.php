@@ -30,39 +30,39 @@ class ProdukController extends Controller {
 	}
 	public function anti_jamur()
 	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Anti Jamur')->first();
 		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Anti Jamur')->orderBy('id','desc')->get());
 		// $data1 = \App\Produk::all();
 		$data1 = array('data1'=>MasterProduk::all());
 		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
+		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
 	public function anti_septik()
 	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Anti Septik')->first();
 		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Anti Septik')->orderBy('id','desc')->get());
 		// $data1 = \App\Produk::all();
 		$data1 = array('data1'=>MasterProduk::all());
 		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
+		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
 	public function asam_urat()
 	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Asam Urat')->first();
 		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Asam Urat')->orderBy('id','desc')->get());
 		// $data1 = \App\Produk::all();
 		$data1 = array('data1'=>MasterProduk::all());
 		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
+		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
 	public function balsem()
 	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Balsem')->first();
 		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Balsem')->orderBy('id','desc')->get());
 		// $data1 = \App\Produk::all();
 		$data1 = array('data1'=>MasterProduk::all());
 		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
+		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
 	public function batuk_berdahak()
 	{

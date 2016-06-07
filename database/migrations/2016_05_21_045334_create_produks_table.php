@@ -19,6 +19,7 @@ class CreateProduksTable extends Migration {
 			$table->String('harga');
 			$table->string('nama_produk');
 			$table->String('Gambar');
+			$table->string('total');
 			$table->timestamps();
 		});
 	}

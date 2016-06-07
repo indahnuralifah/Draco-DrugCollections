@@ -24,8 +24,9 @@ class DracoController extends Controller {
 	public function index()
 	{
 		$data = array('data'=>\App\Blog::get());
+		$draco = array('draco'=>MasterProduk::all());
 		$data2 = array('data2'=>\App\MasterProduk::get());
-		return view('blog.all')->with($data)->with($data2);
+		return view('blog.all')->with($data)->with($data2)->with($draco);
 	}
 
 	// public function show()

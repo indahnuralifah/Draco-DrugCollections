@@ -1,6 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
-
+use App\MasterProduk;
+use App\Promosi;
 class HomeController extends Controller {
 
 	/*
@@ -22,7 +23,9 @@ class HomeController extends Controller {
 	
 	public function index()
 	{
-		return view('home');
+		$data = array('data'=>Promosi::get());
+		$draco = array('draco'=>MasterProduk::all());
+		return view('welcome')->with($draco)->with($data);
 	}
 
 }

@@ -20,7 +20,7 @@
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                             <div class="products-sort-by">
-                                                <strong>Data Obat</strong>
+                                                <strong>Data Obat {{$data4->nama_produk}}</strong>
                                             </div>
                                         </div>
                                     </form>
@@ -28,36 +28,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="row products">
-
-                        <div class="col-md-3 col-sm-4">
-                            <div class="product">
-                                <!-- <div class="flip-container"> -->
-                                    <div class="flipper">
-                                        
-                                <!-- /.text -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
-                        <div class="col-md-3 col-sm-4">
-                            <div class="product">
-                                <div class="flip-container">
-                                    
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                                
-                                <!-- /.text -->
-
-                               
-                                <!-- /.ribbon -->
-                            </div>
-                            <!-- /.product -->
-                        </div>
-
                                 <!-- /.text -->
                             </div>
                             <!-- /.product -->
@@ -65,32 +35,28 @@
 
  <div class="row products">
                     @foreach($data2 as $key => $produk)
-                        <div class="col-md-3 col-sm-4">
+           <div class="col-md-3 col-sm-4">
                             <div class="product">
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
                                             <a href="detail.html">
-                                               
-                                                    <a>
-                                                        <img src="{{url('gambar/'.$produk->Gambar)}}" >
-                                                    </a>
-                                                 
+                                                <img src="{{url('gambar/'.$produk->Gambar)}}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
                                             <a href="detail.html">
-                                                 <img src="/gambar/{{$produk->Gambar}}"> 
+                                                <img src="{{url('gambar/'.$produk->Gambar)}}" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                                 <a href="detail.html" class="invisible">
-                                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                                    <img src="{{url('gambar/'.$produk->Gambar)}}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">                                                          </a>{{ $produk->nama_obat }}</h3>
-                                    <p class="price">{{$produk->harga}}</p>
+                                    <h3>{{$produk->nama_obat}}</h3>
+                                    <p class="price">Rp. {{$produk->harga}}</p>
                                     <p class="buttons">
                                         <a href="detail.html" class="btn btn-default">View detail</a>
                                         <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -100,12 +66,6 @@
                             </div>
                             <!-- /.product -->
                         </div>
+
                         @endforeach
-
-                        
-
-                        </div>
-
-                    </div>
-
 @endsection

@@ -23,6 +23,8 @@ class CreateStoksTable extends Migration {
 			$table->string('harga_beli');
 			$table->string('harga_jual');
 			$table->string('jumlah_stok');
+		
+
 			$table->timestamps();
 		});
 	}

@@ -31,8 +31,9 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		$data = array('data'=>Promosi::get());
 		$draco = array('draco'=>MasterProduk::all());
-		return view('welcome')->with($draco);
+		return view('welcome')->with($draco)->with($s);
 	}
 
 }

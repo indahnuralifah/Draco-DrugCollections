@@ -8,7 +8,9 @@
             <div class="container">
  <div class="col-sm-9" id="blog-listing">
    @foreach($data as $key)
-              <div class="post">
+              <div class="post" style="position: absolute;left: 150;width: 800px;">
+
+
                  
                         <h2><a href="post.html">{{$key->judul}}</a></h2>
                     <hr>
@@ -17,7 +19,7 @@
                         </p>
                         <div class="gambar">
                             <a>
-                                <img src="/gambar/{{$key->gambar}}" class="img-responsive" alt="Example blog post alt">
+                                <img src="/gambar/{{$key->gambar}}" class="img-responsive" alt="Example blog post alt" style="float: center;max-width: 400px">
                             </a>
                         </div>
                         <p class="intro">{{$key->isi}}</p>

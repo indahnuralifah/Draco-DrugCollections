@@ -50,7 +50,7 @@
                 <ul class="menu">
                     <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="register.html">Register</a>
+                    <li><a href="{{url('auth/register')}}">Register</a>
                     </li>
                     <!-- <li><a href="contact.html">Contact</a>
                     </li>
@@ -68,12 +68,14 @@
                         <h4 class="modal-title" id="Login">Customer login</h4>
                     </div>
                     <div class="modal-body">
-                        <form action="customer-orders.html" method="post">
+                       
+                    <form class="form-horizontal" role="form" method="POST" action="/auth/login">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="email-modal" placeholder="email">
+                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password-modal" placeholder="password">
+                                <input type="password" class="form-control" name="password">
                             </div>
 
                             <p class="text-center">
@@ -83,7 +85,7 @@
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted"><a href="{{url('auth/register')}}"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -123,8 +125,8 @@
             <div class="navbar-collapse collapse" id="navigation">
  
                 <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
+                    <img src="img/draco.png" alt="Obaju logo" style="max-width: 100px" class="hidden-xs">
+                    
                 </a>
 
                 <ul class="nav navbar-nav navbar-left">
@@ -195,11 +197,24 @@
                                             @endif
                                             @endforeach
                                             </table>
-
-        
-                                                
                                             </ul>
                                         </div>
+
+                                        <div class="col-sm-3">
+                                            <ul>
+                                            <table>
+                                            @foreach($draco as $key => $produk)
+                                            @if($key > 17 && $key < 28)
+                                            <tr>
+                                            <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</td>
+                                            </tr>
+                                            
+                                            @endif
+                                            @endforeach
+                                            </table>
+                                            </ul>
+                                        </div>
+
 
                                        
                                     </div>
@@ -223,7 +238,7 @@
 
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
                     <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only">Toggle search</span>
+                        <span class="sr-only"></span>
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
