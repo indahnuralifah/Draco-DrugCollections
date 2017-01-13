@@ -8,15 +8,15 @@
                     <div class="clearfix"></div>
             </div>
 
-           <form action="{{ url('/masterproduk/save/') }}" method="POST" >     
-           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-           
+           <form action="{{ url('/masterproduk/update/') }}" method="POST" enctype="multipart/form-data">
+           <input type="hidden" name="id" value="{{$data->id}}">     
+           <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="x_content">
             <br>    
             <div class="item form-group">
             <label for="password" class="control-label col-md-3">Nama Produk</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-            <input id="password" type="text" name="nama_produk" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
+            <input id="password" type="text" name="nama_produk" value="{{$data->nama_produk}}" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
              </div>
             </div>   
 
@@ -45,17 +45,16 @@
                             <thead>
                               <tr class="headings">
                                 <tr class="headings">
-                                 <th>No<center> </th>
+                                 <th>Id<center> </th>
                                  <th>Nama Produk</th>
                                  <th></th>
                                  <th></th> 
                                 </tr>
                              </thead> 
                            <tbody>   
-                           <?php $i = 1; ?>
                           @foreach($data2 as $masterproduk)
                         <tr>
-                            <td>{{ $i++}}</td>
+                            <td>{{ $masterproduk->id}}</td>
                             <td>{{ $masterproduk->nama_produk}}</td>
                             <td>
                         <a href="{{ url('/edit/masterproduk/'.$masterproduk->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>

@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -9,7 +12,7 @@
     <meta name="keywords" content="">
 
     <title>
-    Draco|DrugCollection's
+      DJStoreJakarta
     </title>
 
     <meta name="keywords" content="">
@@ -17,19 +20,19 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
-    <link href="{{ url('css/font-awesome.css')}}" rel="stylesheet">
-    <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{ url('css/animate.min.css')}}" rel="stylesheet">
-    <link href="{{ url('css/owl.carousel.css')}}" rel="stylesheet">
-    <link href="{{ url('css/owl.theme.css')}}" rel="stylesheet">
+    <link href="{{url('css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{url('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url('css/animate.min.css')}}" rel="stylesheet">
+    <link href="{{url('css/owl.carousel.css')}}" rel="stylesheet">
+    <link href="{{url('css/owl.theme.css')}}" rel="stylesheet">
 
     <!-- theme stylesheet -->
-    <link href="{{ url('css/style.default.css')}}" rel="stylesheet" id="theme-stylesheet">
+    <link href="{{url('css/style.default.css')}}" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="{{ url('css/custom.css')}}" rel="stylesheet">
+    <link href="{{url('css/custom.css')}}" rel="stylesheet">
 
-    <script src="{{ url('js/respond.min.js')}}"></script>
+    <script src="{{url('js/respond.min.js')}}"></script>
 
     <link rel="shortcut icon" href="favicon.png">
 
@@ -44,18 +47,19 @@
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                
             </div>
+
             <div class="col-md-6" data-animate="fadeInDown">
+
+                 <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+                    <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
+                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only"></span>
+                </a>
+
                 <ul class="menu">
                     <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </li>
-                    <li><a href="{{url('auth/register')}}">Register</a>
-                    </li>
-                    <!-- <li><a href="contact.html">Contact</a>
-                    </li>
-                    <li><a href="#">Recently viewed</a>
-                    </li> -->
+                   
                 </ul>
             </div>
         </div>
@@ -65,17 +69,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="Login">Customer login</h4>
+                        <h4 class="modal-title" id="Login">Admin Login</h4>
                     </div>
                     <div class="modal-body">
-                       
-                    <form class="form-horizontal" role="form" method="POST" action="/auth/login">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <form action="customer-orders.html" method="post">
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input type="text" class="form-control" id="email-modal" placeholder="email">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" id="password-modal" placeholder="password">
                             </div>
 
                             <p class="text-center">
@@ -83,9 +85,6 @@
                             </p>
 
                         </form>
-
-                        <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="{{url('auth/register')}}"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -99,13 +98,12 @@
     <!-- *** NAVBAR ***
  _________________________________________________________ -->
 
+    
     <div class="navbar navbar-default yamm" role="navigation" id="navbar">
         <div class="container">
+           
             <div class="navbar-header">
 
-                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    
-                </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                         <span class="sr-only">Toggle navigation</span>
@@ -116,7 +114,7 @@
                         <i class="fa fa-search"></i>
                     </button>
                     <a class="btn btn-default navbar-toggle" href="basket.html">
-                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs"> Items in cart</span>
+                        <i class="fa fa-shopping-cart"></i>  <span class="hidden-xs">3 items in cart</span>
                     </a>
                 </div>
             </div>
@@ -124,8 +122,6 @@
 
             <div class="navbar-collapse collapse" id="navigation">
  
-                <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
-                    <img src="img/draco.png" alt="Obaju logo" style="max-width: 100px" class="hidden-xs">
                     
                 </a>
 
@@ -135,11 +131,12 @@
                     </li>
 
 
-            
-
-
                     <li class="dropdown yamm-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Keluhan <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Items<b class="caret"></b></a>
+
+                        <?php
+                        $draco = App\MasterProduk::all();
+                        ?>
 
 
                         <ul class="dropdown-menu">
@@ -147,12 +144,14 @@
                                 <div class="yamm-content">
                                     <div class="row">
                                         <div class="col-sm-3">
+
+                                            <h5>CLoting</h5>
                                            
                                             <ul>
                                             <table>
                                             @foreach($draco as $key => $produk)
                                             @if($key < 5)
-                                            <tr>
+                                            <tr></tr>
 
                                             <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</a></td>
                                             </tr>
@@ -189,7 +188,7 @@
                                             <ul>
                                             <table>
                                             @foreach($draco as $key => $produk)
-                                            @if($key > 10 && $key < 16)
+                                            @if($key > 11 && $key < 17)
                                             <tr>
                                             <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</td>
                                             </tr>
@@ -204,7 +203,7 @@
                                             <ul>
                                             <table>
                                             @foreach($draco as $key => $produk)
-                                            @if($key > 17 && $key < 28)
+                                            @if($key > 17 && $key < 30)
                                             <tr>
                                             <td><a href="{{$produk->nama_produk }}">{{ $produk->nama_produk}}</td>
                                             </tr>
@@ -223,10 +222,18 @@
                             </li>
                         </ul>
                     </li>
-                    <ul class="nav navbar-nav navbar-left">
-                     <li class="active"><a href="{{ url('/blog/all') }}">Blog</a>
+                    
+
+                   <ul class="nav navbar-nav navbar-left">
+                     <li class="active"><a href="{{ url('/custom/all') }}">Custom</a>
                     </li>
-                </ul>
+                   </ul>
+
+                   <ul class="nav navbar-nav navbar-left">
+                     <li class="active"><a href="{{ url('/all') }}">Cek Order</a>
+                    </li>
+                   </ul>
+                    
 
             </div>
             <!--/.nav-collapse -->
@@ -237,10 +244,9 @@
                 <!--/.nav-collapse -->
 
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
-                    <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
-                        <span class="sr-only"></span>
-                        <i class="fa fa-search"></i>
-                    </button>
+                    <a  class="btn navbar-btn btn-primary" href="/cart">
+                        <i class="fa fa-shopping-cart"></i><a href="{{ url('cart')}}">  <span class="hidden-lg"> Items in cart</span>
+                    </a>
                 </div>
 
             </div>

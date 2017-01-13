@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStoksTable extends Migration {
+class CreateCustomsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,18 +12,19 @@ class CreateStoksTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('stoks', function(Blueprint $table)
+		Schema::create('customs', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('kode');
+			$table->string('nama_pembeli');
+			$table->string('no_hp');
+			$table->string('email');
+			$table->string('alamat');
 			$table->string('nama_barang');
 			$table->string('jenis_barang');
-			$table->string('satuan');
-			$table->string('harga_beli');
-			$table->string('harga_jual');
-			$table->string('jumlah_stok');
-		
-
+			$table->string('warna');
+			$table->string('ukuran');
+			$table->string('jumlah_barang');
+			$table->string('keterangan');
 			$table->timestamps();
 		});
 	}
@@ -35,7 +36,7 @@ class CreateStoksTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('stoks');
+		Schema::drop('customs');
 	}
 
 }

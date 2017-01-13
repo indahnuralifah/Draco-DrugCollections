@@ -19,8 +19,9 @@ h1 {
   font-size: 40px;
 }
 #top {
-  background: #80cbc4;
+  background: #fff;
   padding: 10px 0;
+   color: #2c3e50;
 }
 #top .offer {
   color: #fff;
@@ -48,6 +49,7 @@ h1 {
   text-align: right;
   font-size: 16px;
   list-style: none;
+
 }
 @media (max-width: 991px) {
   #top ul.menu {
@@ -58,7 +60,7 @@ h1 {
   display: inline-block;
 }
 #top ul.menu > li a {
-  color: #ffffff;
+  color: #2c3e50;;
 }
 #top ul.menu > li + li:before {
   content: "|\00a0";
@@ -252,8 +254,10 @@ h1 {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 .box {
-  background: #fff;
+  background: #F5F5F5;
   margin: 0 0 30px;
+  margin-left: 100px;
+  width: 1100px;
   border: solid 1px #e6e6e6;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1146,6 +1150,7 @@ h1 {
   font-size: 18px;
   line-height: 20px;
   height: 70px;
+  margin-left: -100px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -1246,7 +1251,7 @@ h1 {
   }
 }
 .navbar-default {
-  background-color: #ffffff;
+  background-color: #2c3e50;
   border-bottom-color: #e6e6e6;
 }
 .navbar-default .navbar-brand {
@@ -1261,7 +1266,7 @@ h1 {
   color: #777777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #555;
+  color: #fff;
    font-size: 25px;
  
 }
@@ -1273,10 +1278,10 @@ h1 {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
-  background-color: #ffffff;
+  color: #fff;
+  background-color: #2c3e50;
   text-transform: uppercase;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 200;
     text-align: center;
 }
@@ -1399,10 +1404,10 @@ hr {
 }
 .btn-primary {
   color: #ffffff;
-  background-color: #555;
-  border-color: #555;
-  margin-right: 40px;
-}
+  background-color: #2c3e50;
+  border-color: #fff;
+  margin-left: 100px;
+
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,

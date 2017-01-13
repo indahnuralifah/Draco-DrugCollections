@@ -9,7 +9,8 @@
                     <div class="clearfix"></div>
             </div>
 
-           <form action="{{ url('/produk/save/') }}" method="POST" enctype="multipart/form-data" autocomplete="off">     
+           <form action="{{ url('/produk/update/') }}" method="POST" enctype="multipart/form-data" autocomplete="off">     
+            <input type="hidden" name="id" value="{{$data->id}}">  
            <input type="hidden" name="_token" value="{{csrf_token()}}">
            
             <div class="x_content">
@@ -109,7 +110,7 @@
                             <td>{{ $bb->harga}}</td>
                             <td>{{ $bb->nama_produk}}</td>
                             <td>{{ $bb->total}}</td>
-                            <td><img src="{{ url('gambar/'.$bb->gambar) }}" alt="" style="max-width:100%;height: 40px;"></td>
+                            <td><img src="{{ url('image/'.$bb->image) }}" alt="" style="max-width:100%;height: 40px;"></td>
                             <td>
                         <a href="{{ url('/edit/produk/'.$bb->id) }}"><i class="fa fa-pencil" style="font-size: 16px !important"></i> Edit</a>
                         </td>

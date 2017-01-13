@@ -36,13 +36,13 @@ Route::get('admin', function () {
 });
 
 
-//BLOG//
-Route::get('blog/all', 'DracoController@index');
-Route::get('blog/add', 'DracoController@create');
-Route::post('blog/save', 'DracoController@store');
-Route::get('blog/show', 'DracoController@show');
-Route::get('blog/edit/{id}', 'DracoController@edit');
-Route::get('blog/delete/{id}', 'DracoController@destroy');
+//CUSTOM//
+Route::get('custom/all', 'DracoController@index');
+Route::get('custom/add', 'DracoController@create');
+Route::post('custom/save', 'DracoController@store');
+Route::get('custom/show', 'DracoController@show');
+Route::get('custom/edit/{id}', 'DracoController@edit');
+Route::get('custom/delete/{id}', 'DracoController@destroy');
 
 
 //PROMOSI//
@@ -54,40 +54,50 @@ Route::post('promosi/save', 'DracoController@get_Promosi');
 Route::get('masterproduk/all', 'MasterProdukController@index');
 Route::get('masterproduk/add', 'MasterProdukController@create');
 Route::post('masterproduk/save', 'MasterProdukController@store');
+Route::get('/delete/masterproduk/{id}','MasterProdukController@destroy');
+Route::get('/edit/masterproduk/{id}','MasterProdukController@edit');
+Route::post('masterproduk/update','MasterProdukController@update');
 
 //PRODUK
 Route::get('produk/all', 'ProdukController@index');
 Route::get('produk/add', 'ProdukController@create');
 Route::get('produk', 'ProdukController@produk');
-Route::get('Anti Jamur', 'ProdukController@anti_jamur');
-Route::get('Anti Septik', 'ProdukController@anti_septik');
-Route::get('Asam Urat', 'ProdukController@asam_urat');
-Route::get('Balsem', 'ProdukController@balsem');
-Route::get('Batuk Berdahak', 'ProdukController@batuk_berdahak');
-Route::get('Batuk Pilek', 'ProdukController@batuk_pilek');
-Route::get('Demam', 'ProdukController@demam');
-Route::get('Diare', 'ProdukController@diare');
-Route::get('Gatal', 'ProdukController@gatal');
-Route::get('Gatal dan Alergi', 'ProdukController@gatal_alergi');
-Route::get('Panas', 'ProdukController@panas');
-Route::get('Jerawat', 'ProdukController@jerawat');
-Route::get('Kalsium', 'ProdukController@kalsium');
-Route::get('Lambung', 'ProdukController@lambung');
-Route::get('Mata', 'ProdukController@mata');
-Route::get('Pencahar', 'ProdukController@pencahar');
-Route::get('Pilek', 'ProdukController@pilek');
-Route::get('Sariawan', 'ProdukController@sariawan');
+Route::get('Jersey', 'ProdukController@jersey');
+Route::get('Shirt', 'ProdukController@shirt');
+Route::get('Topi', 'ProdukController@topi');
+Route::get('Sepatu', 'ProdukController@sepatu');
 Route::post('produk/save', 'ProdukController@store');
+Route::get('/delete/produk/{id}','ProdukController@destroy');
+Route::get('/edit/produk/{id}','ProdukController@edit');
+Route::post('produk/update','ProdukController@update');
+Route::get('/gambar/{filename}',
+	function ($filename)
 
-//STOK OBAT
+	{
+		$path = storage_path() . '/' . $filename;
+		$file = File::get($path);
+		$type = File::mimeType($path);
+
+		$response = Response::make($file, 200);
+		$response->header("content-Type", $type);
+
+		return $response;
+	});
+
+
+//STOK BARANG
 Route::get('stok/all', 'DracoController@view_Stok');
 Route::get('stok/add', 'DracoController@add_Stok');
 Route::post('stok/save', 'DracoController@get_Stok');
 Route::get('stok/show', 'DracoController@view_Obat');
+Route::get('stok/{masterproduk}','DracoController@add_stok2');
+
+Route::get('/pembelian', 'DracoController@view_pembelian');
 
 
-
-
+Route::get('addtocart/{id}','DracoController@addtocart');
+Route::get('/cart','DracoController@cart');
+Route::post('/cart/checkout', 'DracoController@cart_checkout');
 Route::get('/gambar/{filename}',
 	function ($filename)
 {

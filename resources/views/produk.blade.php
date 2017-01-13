@@ -10,7 +10,7 @@
 
                 <div class="col-md-12">
 
-
+<!-- 
                     <div class="box info-bar">
                         <div class="row">
                             <div class="col-sm-12 col-md-8  products-number-sort">
@@ -19,15 +19,15 @@
                                         <div class="col-md-6 col-sm-6">
                                         </div>
                                         <div class="col-md-6 col-sm-6">
-                                            <div class="products-sort-by">
-                                                <strong>Data Obat {{$data4->nama_produk}}</strong>
+                                            <div class="products-sort-by" style="text-transform: uppercase;font-weight: 200; font-size: 20px; position: static; margin-left: 20;">
+                                                <strong>Data {{$data4->nama_produk}}</strong>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                                 <!-- /.text -->
                             </div>
                             <!-- /.product -->
@@ -55,11 +55,10 @@
                                     <img src="{{url('gambar/'.$produk->Gambar)}}" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3>{{$produk->nama_obat}}</h3>
+                                    <h3>{{$produk->nama_barang}}</h3>
                                     <p class="price">Rp. {{$produk->harga}}</p>
-                                    <p class="buttons">
-                                        <a href="detail.html" class="btn btn-default">View detail</a>
-                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <p class="as">
+                                        <a href="addtocart/{{$produk->id}}" type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add </a>
                                     </p>
                                 </div>
                                 <!-- /.text -->

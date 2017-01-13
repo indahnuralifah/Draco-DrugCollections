@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Draco|DrugCollections </title>
+    <title>DJStoreJakarta </title>
 
     <link href="{{ url('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ url('assets/fonts/css/font-awesome.min.css')}}" rel="stylesheet">
@@ -31,13 +31,13 @@
 
     <div class="container body">
 
-        <div class="main_container">
+        <div class="main_container" >
 
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
 
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Draco</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>DJStore Admin</span></a>
                     </div>
                     <div class="clearfix"></div>
 
@@ -46,49 +46,38 @@
                         <div class="menu_section">
                             
                             <ul class="nav side-menu">
-                                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                </li>
-
-                                <li><a href="{{ url('masterproduk/add')}}"><i class="fa fa-table"></i> Master Produk <span class="fa fa-chevron-down"></span></a>
+                                
+                                <li><a href="{{ url('admin')}}"><i class="fa fa-home"></i>  Home</a>
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
 
-                                <li><a href="{{ url('produk/add')}}"><i class="fa fa-table"></i>  Produk <span class="fa fa-chevron-down"></span></a>
+                                <li><a href="{{ url('masterproduk/add')}}"><i class="fa fa-table"></i> Master Produk</a>
+                                    <ul class="nav child_menu" style="display: none">
+                                    </ul>
+                                </li>
+
+                                <li><a href="{{ url('produk/add')}}"><i class="fa fa-table"></i>  Produk</a>
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
 
 
-                               <li><a href="{{ url('stok/add')}}"><i class="fa fa-edit"></i> Stok Data Obat <span class="fa fa-chevron-down"></span></a>
+                               <li><a href="{{ url('stok/add')}}"><i class="fa fa-edit"></i> Stok Data Obat </a>
                                     <ul class="nav child_menu" style="display: none">
                                         
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('promosi/add')}}"><i class="fa fa-desktop"></i> Promosi <span class="fa fa-chevron-down"></span></a>
+                                <li><a href="{{ url('promosi/add')}}"><i class="fa fa-desktop"></i> Promosi</a>
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
-                                <li><a href="{{ url('blog/add')}}"><i class="fa fa-table"></i> Blog <span class="fa fa-chevron-down"></span></a>
+                                <li><a href="{{ url('pembelian')}}"><i class="fa fa-table"></i> Pembelian </a>
                                     <ul class="nav child_menu" style="display: none">
                                     </ul>
                                 </li>
 
-                                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li><a href="chartjs.html">Chart JS</a>
-                                        </li>
-                                        <li><a href="chartjs2.html">Chart JS2</a>
-                                        </li>
-                                        <li><a href="morisjs.html">Moris JS</a>
-                                        </li>
-                                        <li><a href="echarts.html">ECharts </a>
-                                        </li>
-                                        <li><a href="other_charts.html">Other Charts </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
+                               
                             </ul>
                         </div>
                     </div>
@@ -118,19 +107,15 @@
 
                 <div class="nav_menu">
                     <nav class="" role="navigation">
-                        <div class="nav toggle">
+                        <!-- <div class="nav toggle">
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                        </div>
+                        </div> -->
 
                         <ul class="nav navbar-nav navbar-right">
                             
 
                             <li role="presentation" class="dropdown">
-                                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-
-                                </a>
+                                
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu"><!--  -->
 
                         </ul>
@@ -196,6 +181,14 @@
     <script type="text/javascript" src="{{ url ('assets/js/flot/curvedLines.js')}}"></script>
     <script type="text/javascript" src="{{ url ('assets/js/flot/jquery.flot.resize.js')}}"></script>
     <script>
+     function isNumberKey(evt)
+{
+var charCode = (evt.which) ? evt.which : event.keyCode
+if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+return false;
+return true;
+}
         $(document).ready(function () {
             // [17, 74, 6, 39, 20, 85, 7]
             //[82, 23, 66, 9, 99, 6, 2]
@@ -261,7 +254,12 @@
     <script type="text/javascript" src="{{ url('assets/js/maps/gdp-data.js')}}"></script>
     <script type="text/javascript" src="{{ url('assets/js/maps/jquery-jvectormap-world-mill-en.js')}}"></script>
     <script type="text/javascript" src="{{ url('assets/js/maps/jquery-jvectormap-us-aea-en.js')}}"></script>
-    <script>
+    <script src="{{url('/js/jquery.mask.min.js')}}"></script>
+<script type="text/javascript">
+     $(document).ready(function(){
+    $('.money').mask('000.000.000.000.000', {reverse: true});
+    });
+
         $(function () {
             $('#world-map-gdp').vectorMap({
                 map: 'world_mill_en',

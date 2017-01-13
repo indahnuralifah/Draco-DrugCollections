@@ -31,7 +31,8 @@ class MasterProdukController extends Controller {
 	 */
 	public function create()
 	{
-		return view('masterproduk.add');
+		$data2 = array('data2'=>\App\MasterProduk::all());
+		return view('masterproduk.add')->with($data2);
 	}
 
 	/**
@@ -65,7 +66,9 @@ class MasterProdukController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$data2 = array('data2'=>MasterProduk::all());
+		$data = array('data'=>MasterProduk::find($id));
+         return view('masterproduk.edit')->with($data)->with($data2);
 	}
 
 	/**
@@ -74,9 +77,13 @@ class MasterProdukController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update()
 	{
-		//
+		$masterproduk = MasterProduk::find(Input::get('id'));
+   		$masterproduk->nama_produk = Input::get('nama_produk');
+   		$masterproduk->save();
+
+   		return redirect(url('/masterproduk/add'));
 	}
 
 	/**
@@ -87,7 +94,9 @@ class MasterProdukController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+			$masterproduk = MasterProduk::find($id);
+			$masterproduk->delete();
+			return redirect('/masterproduk/add');		
 	}
 
 }

@@ -33,7 +33,7 @@ class WelcomeController extends Controller {
 	{
 		$data = array('data'=>Promosi::get());
 		$draco = array('draco'=>MasterProduk::all());
-		return view('welcome')->with($draco)->with($s);
+		return view('welcome')->with($draco)->with($s)->with($data);
 	}
 
 }

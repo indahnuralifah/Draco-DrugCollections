@@ -4,7 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Produk;
-use App\MasterProduk;
+use App\Stok;
+
 use Illuminate\Support\Facades\Input;
 
 use Illuminate\Http\Request;
@@ -24,147 +25,44 @@ class ProdukController extends Controller {
 
 	public function produk()
 	{
-		$data = \App\Produk::where('nama_produk','=', 'nama_obat');
-		$draco = array('draco'=>MasterProduk::all());
+		$data = \App\Produk::where('nama_produk','=', 'nama_barang');
+		$draco = array('draco'=>produk::all());
 		return view('produk')->with('data',$data)->with($draco);
 	}
-	public function anti_jamur()
+	public function jersey()
 	{
-		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Anti Jamur')->first();
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Anti Jamur')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Jersey')->first();
+		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Jersey')->orderBy('id','desc')->get());
+		$data1 = array('data1'=>produk::all());
+		$draco = array('draco'=>produk::all());
 		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
-	public function anti_septik()
+	public function shirt()
 	{
-		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Anti Septik')->first();
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Anti Septik')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Shirt')->first();
+		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Shirt')->orderBy('id','desc')->get());
+		$data1 = array('data1'=>produk::all());
+		$draco = array('draco'=>produk::all());
 		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
-	public function asam_urat()
+	public function topi()
 	{
-		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Asam Urat')->first();
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Asam Urat')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Topi')->first();
+		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Topi')->orderBy('id','desc')->get());
+		$data1 = array('data1'=>produk::all());
+		$draco = array('draco'=>produk::all());
 		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
-	public function balsem()
+	
+	public function sepatu()
 	{
-		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Balsem')->first();
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Balsem')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
+		$s['data4'] = \App\Produk::where('nama_produk', '=', 'Sepatu')->first();
+		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Sepatu')->orderBy('id','desc')->get());
+		$data1 = array('data1'=>produk::all());
+		$draco = array('draco'=>produk::all());
 		return view('produk')->with($data2)->with($data1)->with($draco)->with($s);
 	}
-	public function batuk_berdahak()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Batuk Berdahak')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function demam()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Demam')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function diare()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Diare')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function gatal()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Gatal')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-
-	}
-	public function gatal_alergi()
-	{
-		$draco = array('draco'=>MasterProduk::all());
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Gatal dan Alergi')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function jerawat()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Jerawat')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function kalsium()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Kalsium')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function panas()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Panas')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function suplemen()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Suplemen')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function pilek()
-	{
-		// $data2 = \App\Produk::where('nama_produk','=', 'Anti Jamur');
-		$data2 = array('data2'=>Produk::where('nama_produk', '=', 'Pilek')->orderBy('id','desc')->get());
-		// $data1 = \App\Produk::all();
-		$data1 = array('data1'=>MasterProduk::all());
-		$draco = array('draco'=>MasterProduk::all());
-		return view('produk')->with($data2)->with($data1)->with($draco);
-	}
-	public function sariawan()
-	{
-		$s['data2'] = \App\Produk::where('nama_produk','Sariawan')->orderBy('id','desc')->get();
-		// $data2 = array('data2'=>Produk::where('nama_produk', '=', 'Sariawan')->orderBy('id','desc')->get());
-		$s['data1'] = \App\MasterProduk::all();
-
-		// $data1 = array('data1'=>MasterProduk::all());
-		return view('produk')->with($s);
-	}
-
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -173,8 +71,10 @@ class ProdukController extends Controller {
 	public function create()
 
 	{
-		$data1 = array('data1'=>MasterProduk::all());
-		return view('produk.add')->with($data1); 
+		// $data1 = array('data1'=>produk::all());
+		$data1['produk'] =  \App\MasterProduk::all();
+		$b['b'] = produk::all();
+		return view('produk.add')->with($data1)->with($b); 
 	}
 
 	/**
@@ -186,10 +86,11 @@ class ProdukController extends Controller {
 	{
 			
 		$post = new Produk;
-		$post->nama_obat = Input::get('nama_obat');
+		$post->nama_barang = Input::get('nama_barang');
 		$post->harga = Input::get('harga');
 		$post->nama_produk = Input::get('nama_produk');
-		
+		$post->total = Input::get('total');
+
 		if(Input::hasFile('gambar')){
 			$gambar = date("YmdHis");
 			uniqid().".".Input::file('gambar')->getClientOriginalExtension();
@@ -197,6 +98,16 @@ class ProdukController extends Controller {
 			$post->gambar = $gambar;
 		}
 		$post->save();
+
+
+
+		// $data = Stok::where('nama_produk', Input::get('nama_barang'))->first();
+		// if ($data) {
+		// 	$data->jumlah
+		// }
+		// else {
+
+		
 		return redirect(url('produk/add'));
 	}
 
@@ -219,7 +130,9 @@ class ProdukController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$data2 = array('data2'=>Produk::all());
+		$data = array('data'=>Produk::find($id));
+         return view('produk.edit')->with($data)->with($data2);
 	}
 
 	/**
@@ -230,7 +143,21 @@ class ProdukController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$produk = Produk::find(Input::get('id'));
+   		$post->nama_barang = Input::get('nama_barang');
+		$post->harga = Input::get('harga');
+		$post->nama_produk = Input::get('nama_produk');
+		$post->total = Input::get('total');
+
+		if(Input::hasFile('gambar')){
+			$gambar = date("YmdHis");
+			uniqid().".".Input::file('gambar')->getClientOriginalExtension();
+			Input::file('gambar')->move(storage_path(),$gambar);
+			$post->gambar = $gambar;
+		}
+   		$produk->save();
+
+   		return redirect(url('/produk/add'));
 	}
 
 	/**
@@ -241,7 +168,9 @@ class ProdukController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+			$produk = Produk::find($id);
+			$produk->delete();
+			return redirect('/produk/add');	
 	}
 
 }

@@ -4,12 +4,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Blog;
+use App\Custom;
 use App\Promosi;
 use App;
 use App\MasterProduk;
 use App\Produk;
 use App\Stok;
+use App\Pembelian;
 
 use Illuminate\Support\Facades\Input;
 
@@ -23,17 +24,17 @@ class DracoController extends Controller {
 		
 	public function index()
 	{
-		$data = array('data'=>\App\Blog::get());
+		$data = array('data'=>\App\Custom::get());
 		$draco = array('draco'=>MasterProduk::all());
 		$data2 = array('data2'=>\App\MasterProduk::get());
-		return view('blog.all')->with($data)->with($data2)->with($draco);
+		return view('custom.all')->with($data)->with($data2)->with($draco);
 	}
 
 	// public function show()
 	// {
-	// 	$data = array('data'=>\App\Blog::get());
+	// 	$data = array('data'=>\App\custom::get());
 	// 	$data2 = array('data2'=>\App\MasterProduk::get());
-	// 	return view('blog.show')->with($data)->with($data2);
+	// 	return view('custom.show')->with($data)->with($data2);
 	// }
 
 	/**
@@ -44,7 +45,7 @@ class DracoController extends Controller {
 	public function create()
 	{
 		$data2 = array('data2'=>MasterProduk::all());
-		return view('blog.add')->with($data2);
+		return view('custom.add')->with($data2);
 	}
 
 
@@ -55,17 +56,19 @@ class DracoController extends Controller {
 	 */
 	public function store()
 	{
-		$post = new Blog;
-		$post->judul = Input::get('judul');
-		$post->isi = Input::get('isi');
-		if(Input::hasFile('gambar')){
-			$gambar = date("YmdHis");
-			uniqid().".".Input::file('gambar')->getClientOriginalExtension();
-			Input::file('gambar')->move(storage_path(),$gambar);
-			$post->gambar = $gambar;
-		}
+		$post = new Custom;
+		$post->nama_pembeli = Input::get('nama_pembeli');
+		$post->no_hp = Input::get('no_hp');
+		$post->email = Input::get('email');
+		$post->alamat = Input::get('alamat');
+		$post->nama_barang = Input::get('nama_barang');
+		$post->jenis_barang = Input::get('jenis_barang');
+		$post->warna = Input::get('warna');
+		$post->ukuran = Input::get('ukuran');
+		$post->jumlah_barang = Input::get('jumlah_barang');
+		$post->keterangan = Input::get('keterangan');
 		$post->save();
-		return redirect(url('blog/add'));
+		return redirect(url('custom/all'));
 	}
 
 	/**
@@ -77,10 +80,10 @@ class DracoController extends Controller {
 	public function show()
 	{
 		
-		$data = array('data'=>\App\Blog::get());
+		$data = array('data'=>\App\Custom::get());
 		$data2 = array('data2'=>\App\MasterProduk::get());
-		return view('blog.show')->with($data)->with($data2);
-        return view('blog.add', compact('blog'));
+		return view('custom.show')->with($data)->with($data2);
+        return view('custom.add', compact('custom'));
 	}
 		
 
@@ -155,8 +158,8 @@ class DracoController extends Controller {
 
 		$post = new Stok;
 		$post->kode = Input::get('kode');
-		$post->nama_obat = Input::get('nama_obat');
-		$post->jenis_obat = Input::get('jenis_obat');
+		$post->nama_barang = Input::get('nama_barang');
+		$post->jenis_barang = Input::get('jenis_barang');
 		$post->satuan = Input::get('satuan');
 		$post->nama_produk = Input::get('nama_produk');
 		$post->ket = Input::get('ket');
@@ -176,20 +179,79 @@ class DracoController extends Controller {
 	}
 	public function add_Stok()
 	{
-		$data1 = array('data1'=>MasterProduk::all());
+		$data1 = array('data1'=>MasterProduk::with('produk')->get());
+		// return $data1;
 		return view('stok.add')->with($data1);
+	}
+	public function add_Stok2($masterproduk)
+	{
+		$data1 = array('data1'=>MasterProduk::with('produk')->where('nama_produk',$masterproduk)->get());
+		// return $data1;
+		return view('stok.add2')->with($data1);
 	}
 	public function view_Obat()
 	{
 		
-		$data = array('data'=>\App\Blog::get());
+		$data = array('data'=>\App\custom::get());
 		$data2 = array('data2'=>\App\MasterProduk::get());
 		return view('stok.show')->with($data)->with($data2);
-      
 	}
 
+	public function addtocart(Request $r,$id){
 
+		$produk = \App\Produk::find($id);
+		// $produk->total = $produk->total-1;
+		// $produk->save();
 
+		$key = count(session('cart'));
+        $array  = session('cart');
+        $array[$key+1]['id'] = $produk->id;
+        $array[$key+1]['nama_barang'] = $produk->nama_barang;
+        $array[$key+1]['harga'] = $produk->harga;
+        $array[$key+1]['nama_produk'] = $produk->nama_produk;
+        $array[$key+1]['gambar'] = $produk->gambar;
+        $array[$key+1]['total'] = $produk->total;
+        $r->session()->put('cart',$array);    
+        return redirect('cart');
+	}
 
+	public function cart(Request $r)
+    {
+        // $masterproduk = \App\MasterProduk::all();
+        // $draco = \App\MasterProduk::all();
+        // $data = \App\Produk::all();
+        // $r->session()->forget('cart');
+        $data = $r->session()->get('cart');
+        $total = 0;
+        foreach($r->session()->get('cart') as $data){
+        	$total = $total + $data['harga'];
+        }
+        // return $r->session()->get('cart');
 
+        // return $total;
+        // return $cart;
+        // return $r->session()->get('cart');
+        return view('cart',['data'=>$r->session()->get('cart'), 'total' => $total]);
+    }
+
+    public function cart_checkout(Request $r)
+    {
+    	$cart = session('cart');
+    	$count = count(session('cart'));
+    	$no = 1;
+    	// foreach ($ji->quantity as $key => $value) {
+    	// 	echo $value;
+    	// }
+    	if (is_array($cart)||is_object($cart)) {
+	    	foreach ($cart as $data) {
+	    		// $r->input('totalbarang_'.$data['id']) - $r->input('total_'.$data['id']);
+	    		// $cart[$i]['total'] = $r->input('number_'.$i);
+	    		\App\Produk::where('id',$r->input('id_'.$data['id']))
+	    					->update(['total'=>$r->input('totalbarang_'.$data['id']) - $r->input('total_'.$data['id'])]);
+	   		}
+    	}
+
+    	$r->session()->forget('cart');
+    	return redirect('/');
+    }
 }

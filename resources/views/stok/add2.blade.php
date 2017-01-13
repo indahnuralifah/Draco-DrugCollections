@@ -6,13 +6,7 @@
          <h2>Form Stok</h2>
          <ul class="nav navbar-right panel_toolbox"></ul>
          <div class="clearfix"></div>
-         <ul>
-            @foreach($data1 as $key => $data)
-                <li><a href="{{ $data->nama_produk }}">{{ $data->nama_produk }}</a></li>
-            @endforeach
-         </ul>
-         <ul>
-         <!-- <table class="table table-responsive">
+         <table class="table table-responsive">
              <thead>
                  <tr>
                      <td>Master Produk</td>
@@ -31,7 +25,7 @@
                 @endforeach
                 @endforeach
             </tbody>
-         </table> -->
+         </table>
          
          </ul>
       </div>
